@@ -1,20 +1,44 @@
+<!--
+current version: 1.0
+- implemented basic countdown timer functionality without using time format
+
+TODO:
+
+Timer counting down to zero from user input.
+
+- Basic Features: Input duration, start/stop/reset, display remaining time.
+
+- Enhanced Features: Custom alert sound, multiple timers.
+
+- Advanced Features: Scheduled timers with notifications, animated transitions.
+-->
+
 <!DOCTYPE html>
 <html lang="en" dir = "ltr">
     <head>
         <meta charset="utf-8">
-        <title> First Webpage</title>
+        <title>Countdown Timer</title>
+        <link rel="stylesheet" href="style.css">
     </head>
-    <body style = "background-color: gray;">
-        <h1 style = "color:blue; text-align: center;"> My University Name</h1>
-        <h1 style = "color:black; text-align: center;"> Website Development</h1>
+<body>
+    <div class ="container">
+        <h1 id="" class="">Countdown Timer</h1>
+        <!-- input duration -->
+        Time:
+        <input type="number" name = "" value = "60" class="input" id="timerInput">
 
-        <p> We <span style = "color:red;">will</span> learn: </p>
-        <ul style = "list-style-type: square;">
-            <li> <b>HTML HyperText Markedup Language</b></li>
-            <li> <u>CSS</u> </li>
-            <li> <i>JavaScript</i> </li>
-        </ul>
-    
-    </body>
+        <!-- start button -->
+        <button type="button" name="button" class="btn" id="startBtn">Start</button>
+        <!-- stop button -->
+        <button type="button" name="button" class="btn" id="stopBtn">Stop</button>
+        <!-- reset button -->
+        <button type="button" name="button" class="btn" id="resetBtn">Reset</button>
+
+        <span id="timerDisplay" class="input">60</span>
+            
+    </div>
+    <script src = "script.js"></script>
+</body>
+
 
 </html>
