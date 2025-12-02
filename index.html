@@ -1,9 +1,12 @@
 <!--
-current version: 1.1
-- implemented basic countdown timer functionality without using time format
+current version: 1.2
+- implemented basic countdown timer functionality 
 
 - tab title updates to show remaining time
-- alarm sound when timer reaches zero
+- looping alarm sound when timer reaches zero
+
+- uses time format (hh:mm:ss)
+- added dropdown menus for selecting hours, minutes, seconds
 
 
 TODO:
@@ -27,9 +30,22 @@ Timer counting down to zero from user input.
 <body>
     <div class ="container">
         <h1 id="" class="">Countdown Timer</h1>
+
         <!-- input duration -->
-        Time:
-        <input type="number" name = "" value = "60" class="input" id="timerInput">
+        <div class="time-selectors">
+            <label>
+                Hours:
+                <select id="hours"></select>
+            </label>
+            <label>
+                Minutes:
+                <select id="minutes"></select>
+            </label>
+            <label>
+                Seconds:
+                <select id="seconds"></select>
+            </label>
+        </div>
 
         <!-- start button -->
         <button type="button" name="button" class="btn" id="startBtn">Start</button>
@@ -38,7 +54,7 @@ Timer counting down to zero from user input.
         <!-- reset button -->
         <button type="button" name="button" class="btn" id="resetBtn">Reset</button>
 
-        <span id="timerDisplay" class="input">60</span>
+        <span id="timerDisplay" class="input"></span>
             
     </div>
     <script src = "script.js"></script>

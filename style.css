@@ -4,7 +4,7 @@ body {
     justify-content: center;
     background: linear-gradient(to left bottom, red, purple);
     min-height: 100vh;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: "Lucida Console", "Courier New", monospace;
 }
 .container {
     display: flex;
@@ -34,6 +34,7 @@ body {
     box-shadow: 0 0 4px rgba(0,0,0,.3);
     cursor: pointer;
     transition: box-shadow 100ms ease;
+    font-family: "Lucida Console", "Courier New", monospace;
 }
 .btn:hover{
     box-shadow: 0 0 12px rgba(0,0,0,.5);
@@ -41,4 +42,19 @@ body {
 .info-text{
     font-size: 20px;
     font-weight: 500;
+}
+
+
+.time-selectors{
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.time-selectors label {
+  display: flex;
+  flex-direction: column;  /* label above, select below */
+  font-family: "Lucida Console", "Courier New", monospace;
+  font-size: 14px;
 }
