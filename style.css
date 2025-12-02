@@ -2,7 +2,7 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    background: linear-gradient(to left bottom, red, purple);
+    background: linear-gradient(to left bottom, blue, purple);
     min-height: 100vh;
     font-family: "Lucida Console", "Courier New", monospace;
 }
@@ -24,6 +24,12 @@ body {
     margin: 10px;
     border-radius: 5px;
 }
+
+.buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .btn {
     background: lightblue;
     border: none;
@@ -44,7 +50,6 @@ body {
     font-weight: 500;
 }
 
-
 .time-selectors{
     display: flex;
     gap: 20px;
@@ -57,4 +62,16 @@ body {
   flex-direction: column;  /* label above, select below */
   font-family: "Lucida Console", "Courier New", monospace;
   font-size: 14px;
+}
+
+#startStopBtn {
+    width: 100px;
+    height: 40px;
+    text-align: center;
+}
+
+#setTimeBtn {
+    width: 180px;
+    height: 40px;
+    text-align: center;
 }

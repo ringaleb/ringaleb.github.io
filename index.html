@@ -1,23 +1,22 @@
 <!--
-current version: 1.2
+v1.3
 - implemented basic countdown timer functionality 
 
 - tab title updates to show remaining time
 - looping alarm sound when timer reaches zero
 
 - uses time format (hh:mm:ss)
-- added dropdown menus for selecting hours, minutes, seconds
+- dropdown menus for selecting hours, minutes, seconds, up to 99 hours 59 minutes 59 seconds
 
+- some dynamic button UI and behavior:
+    - start and stop is a single button that toggles between states and disappears when timer reaches zero
+    - set timer button updates the timer to the selected duration based on dropdown menu selections
 
-TODO:
+- known issue:  setInterval's first tick occurs after 1 sec, causing a 1 sec delay before countdown starts
+                Setting an immediate countdown start causes time innacuracy when clicking repeatedly fast
+                Using a smaller interval in the millisecond range causes significant delay
+                Minor issue left as is for now
 
-Timer counting down to zero from user input.
-
-- Basic Features: Input duration, start/stop/reset, display remaining time.
-
-- Enhanced Features: Custom alert sound, multiple timers.
-
-- Advanced Features: Scheduled timers with notifications, animated transitions.
 -->
 
 <!DOCTYPE html>
@@ -29,32 +28,27 @@ Timer counting down to zero from user input.
     </head>
 <body>
     <div class ="container">
-        <h1 id="" class="">Countdown Timer</h1>
-
-        <!-- input duration -->
-        <div class="time-selectors">
-            <label>
-                Hours:
-                <select id="hours"></select>
-            </label>
-            <label>
-                Minutes:
-                <select id="minutes"></select>
-            </label>
-            <label>
-                Seconds:
-                <select id="seconds"></select>
-            </label>
-        </div>
-
-        <!-- start button -->
-        <button type="button" name="button" class="btn" id="startBtn">Start</button>
-        <!-- stop button -->
-        <button type="button" name="button" class="btn" id="stopBtn">Stop</button>
-        <!-- reset button -->
-        <button type="button" name="button" class="btn" id="resetBtn">Reset</button>
+        <h1 id="" class="" style="text-align: center">Countdown Timer</h1>
 
         <span id="timerDisplay" class="input"></span>
+
+        <!-- input duration -->
+        <div class="buttons">
+            <button type="button" class="btn" id="startStopBtn" style="background-color: lightgreen;"">Start</button>
+            <button type="button" class="btn" id="resetBtn">Reset</button>
+        </div>
+
+        <!-- time selectors for editing -->
+        <div id="editContainer" style="margin-top: 20px;">
+            <div class="time-selectors">
+                <label>Hours: <select id="hours"></select></label>
+                <label>Minutes: <select id="minutes"></select></label>
+                <label>Seconds: <select id="seconds"></select></label>
+            </div>
+            <div class = "buttons">
+                <button class="btn" id="setTimerBtn">Set Timer</button>
+            </div>
+        </div>
             
     </div>
     <script src = "script.js"></script>
